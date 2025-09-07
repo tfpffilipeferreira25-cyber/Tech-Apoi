@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tech Apoio - Especialistas em Madeira e Mobiliário</title>
+  <meta name="description" content="Tech Apoio - Consultoria especializada na indústria da madeira e mobiliário. Oferecemos soluções estratégicas, otimização de processos e desenvolvimento sustentável para empresas do setor.">
+  <meta name="keywords" content="consultoria madeira, mobiliário, indústria madeireira, sustentabilidade, processos produtivos, certificação florestal, design móveis">
+  <meta name="author" content="Tech Apoio Team">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Tech Apoio - Especialistas em Madeira e Mobiliário">
+  <meta property="og:description" content="Consultoria especializada na indústria da madeira e mobiliário com foco em sustentabilidade e inovação">
+  <meta property="og:image" content="imagens/tech.png">
+  <meta property="og:url" content="https://techapoio.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="imagens/tech.png">
+
+  <!-- External Libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Modern Blue Color Palette */
+      --primary: #1e3a8a;          /* Azul Escuro - Primary */
+      --secondary: #3b82f6;        /* Azul Médio - Secondary */
+      --accent: #60a5fa;           /* Azul Claro - Accent */
+      --light-blue: #dbeafe;       /* Azul Muito Claro */
+      --dark-blue: #1e40af;        /* Azul Muito Escuro */
+      --blue-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      
+      /* Neutral Colors - Light Mode */
+      --white: #FFFFFF;
+      --light-gray: #f8fafc;       /* Cinzento Muito Claro */
+      --gray: #64748b;             /* Cinzento Médio */
+      --dark-gray: #334155;        /* Cinzento Escuro */
+      --black: #0f172a;            /* Preto/Azul Muito Escuro */
+      
+      /* Background Colors */
+      --bg-primary: var(--white);
+      --bg-secondary: var(--light-gray);
+      --bg-dark: var(--black);
+      --bg-gradient: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+      
+      /* Text Colors */
+      --text-primary: var(--dark-gray);
+      --text-secondary: var(--gray);
+      --text-light: var(--white);
+      
+      /* Card Background */
+      --card-bg: var(--white);
+      --card-border: rgba(30, 58, 138, 0.1);
+      
+      /* Typography */
+      --font-primary: 'Inter', sans-serif;
+      --font-display: 'Playfair Display', serif;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 12px rgba(30, 58, 138, 0.15);
+      --shadow-lg: 0 8px 25px rgba(30, 58, 138, 0.2);
+      --shadow-blue: 0 8px 32px rgba(30, 58, 138, 0.3);
+      
+      /* Transitions */
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark Mode */
+    [data-theme="dark"] {
+      /* Dark Mode Colors */
+      --primary: #3b82f6;          /* Azul mais claro no dark */
+      --secondary: #60a5fa;        /* Azul claro */
+      --accent: #93c5fd;           /* Azul muito claro */
+      --light-blue: #1e293b;       /* Azul escuro para backgrounds */
+      
+      /* Neutral Colors - Dark Mode */
+      --white: #0f172a;            /* Dark background */
+      --light-gray: #1e293b;       /* Dark secondary background */
+      --gray: #94a3b8;             /* Light gray text */
+      --dark-gray: #f1f5f9;        /* Light text */
+      --black: #FFFFFF;            /* White text */
+      
+      /* Background Colors */
+      --bg-primary: #0f172a;       /* Dark primary background */
+      --bg-secondary: #1e293b;     /* Dark secondary background */
+      --bg-dark: #FFFFFF;          /* Light for contrast */
+      
+      /* Text Colors */
+      --text-primary: #f1f5f9;     /* Light text */
+      --text-secondary: #94a3b8;   /* Medium gray text */
+      --text-light: #0f172a;       /* Dark text for light backgrounds */
+      
+      /* Card Background */
+      --card-bg: #1e293b;
+      --card-border: rgba(59, 130, 246, 0.2);
+      
+      /* Shadows for dark mode */
+      --shadow-sm: 0 2px 4px rgba(0,0,0,0.3);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+      --shadow-lg: 0 8px 25px rgba(0,0,0,0.5);
+      --shadow-blue: 0 8px 32px rgba(59, 130, 246, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-primary);
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+      transition: var(--transition);
+      padding: 1rem 0;
+    }
+
+    .navbar.scrolled {
+      background: var(--card-bg);
+      box-shadow: var(--shadow-md);
+      padding: 0.5rem 0;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    /* Language Toggle Button */
+    .language-toggle,
+    .theme-toggle {
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .language-toggle:hover,
+    .theme-toggle:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .language-toggle i,
+    .theme-toggle i {
+      font-size: 1rem;
+    }
+
+    .theme-toggle {
+      padding: 0.5rem;
+      min-width: 45px;
+      justify-content: center;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-image {
+      height: 2.5rem;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .nav-toggle span {
+      width: 25px;
+      height: 3px;
+      background: var(--primary);
+      margin: 3px 0;
+      transition: var(--transition);
+    }
+
+    /* Hero Section - Introduction Style */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--light-blue) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-primary);
+      position: relative;
+      padding: 8rem 2rem 4rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(30,58,138,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      color: var(--primary);
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    /* Typing Animation */
+    .typing-text {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .typing-text::after {
+      content: '|';
+      position: absolute;
+      right: -3px;
+      color: var(--accent);
+      animation: blink 0.8s ease-in-out infinite;
+      font-weight: 300;
+    }
+
+    .typing-text.finished::after {
+      animation: fadeOutCursor 0.5s ease-out forwards;
+    }
+
+    @keyframes blink {
+      0%, 45% { 
+        opacity: 1; 
+        transform: scaleY(1);
+      }
+      50%, 100% { 
+        opacity: 0.3; 
+        transform: scaleY(0.8);
+      }
+    }
+
+    @keyframes fadeOutCursor {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes smoothType {
+      0% { 
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% { 
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .typing-char {
+      animation: smoothType 0.3s ease-out forwards;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-weight: 600;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 1s ease-out 0.8s both;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+      animation: fadeInUp 1s ease-out 1s both;
+    }
+
+    .hero-stat {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--card-border);
+      transition: var(--transition);
+    }
+
+    .hero-stat:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-stat-label {
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 1.2s both;
+    }
+
+    .btn {
+      padding: 1.2rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--blue-gradient);
+      color: var(--white);
+      box-shadow: var(--shadow-blue);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 45px rgba(30, 58, 138, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* Features highlight */
+    .hero-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 4rem;
+      animation: fadeInUp 1s ease-out 1.4s both;
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+    }
+
+    .hero-feature-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--bg-gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .hero-feature-text {
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Sections */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid var(--card-border);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--bg-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-size: 2rem;
+      color: var(--white);
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .service-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* About Section */
+    .about {
+      background: var(--bg-secondary);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-image {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    /* Stats */
+    .stats {
+      background: var(--primary);
+      color: var(--white);
+      padding: 3rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Team */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-member {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .member-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      overflow: hidden;
+      border: 4px solid var(--primary);
+    }
+
+    .member-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .member-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .member-role {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--bg-secondary);
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-form {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--card-border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: var(--transition);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--light-blue);
+      color: var(--text-primary);
+      padding: 3rem 0 1rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      font-family: var(--font-display);
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-section a:hover {
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    /* Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: var(--transition-slow);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        transition: var(--transition);
+      }
+
+      .nav-menu.active {
+        transform: translateY(0);
+      }
+
+      .nav-right {
+        gap: 1rem;
+      }
+
+      .language-toggle,
+      .theme-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .theme-toggle {
+        padding: 0.4rem;
+        min-width: 35px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .hero-features {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+      }
+
+      .about-content,
+      .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stat-number {
+        font-size: 2rem;
+      }
+
+      .hero-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 1.2rem;
+      }
+
+      .services-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .member-photo {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+<<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <img src="imagens/Logo.png" alt="Tech Apoio Logo" class="logo-image">
+        Tech Apoio
+      </a>
+      <div class="nav-right">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link active" data-translate="nav-home">Início</a></li>
+          <li><a href="#services" class="nav-link" data-translate="nav-services">Serviços</a></li>
+          <li><a href="#about" class="nav-link" data-translate="nav-about">Sobre</a></li>
+          <li><a href="#team" class="nav-link" data-translate="nav-team">Equipa</a></li>
+          <li><a href="#contact" class="nav-link" data-translate="nav-contact">Contacto</a></li>
+        </ul>
+        <button class="theme-toggle" id="theme-toggle" title="Alternar tema">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="language-toggle" id="language-toggle">
+          <i class="fas fa-globe"></i>
+          <span id="current-lang">PT</span>
+        </button>
+      </div>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fas fa-star"></i>
+        <span data-translate="hero-badge">Especialistas em Madeira & Mobiliário</span>
+      </div>
+      
+      <h1><span id="typing-title" class="typing-text"></span></h1>
+      
+      <p class="hero-subtitle" data-translate="hero-subtitle">Inovação que move o seu mobiliário</p>
+      
+      <p data-translate="hero-description">Somos especialistas em consultoria para a indústria da madeira e mobiliário, oferecendo soluções estratégicas que combinam tradição artesanal com tecnologia moderna. Nossa missão é impulsionar seu negócio com práticas sustentáveis e processos otimizados.</p>
+      
+      <div class="cta-buttons">
+        <a href="#services" class="btn btn-primary">
+          <i class="fas fa-rocket"></i>
+          <span data-translate="btn-services">Nossos Serviços</span>
+        </a>
+        <a href="#about" class="btn btn-secondary">
+          <i class="fas fa-info-circle"></i>
+          <span data-translate="btn-about">Sobre Nós</span>
+        </a>
+      </div>
+      
+      <div class="hero-features">
+        <div class="hero-feature">
+          <div class="hero-feature-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <div class="hero-feature-text" data-translate="feature-sustainable">Práticas Sustentáveis</div>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="hero-feature-text" data-translate="feature-optimized">Processos Otimizados</div>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="hero-feature-text" data-translate="feature-growth">Crescimento Garantido</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-translate="services-title">Nossos Serviços</h2>
+        <p class="section-subtitle" data-translate="services-subtitle">Soluções completas para transformar sua empresa na indústria da madeira e mobiliário</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 data-translate="service-optimization-title">Otimização de Processos</h3>
+          <p data-translate="service-optimization-desc">Análise e melhoria dos processos produtivos, reduzindo custos e aumentando eficiência operacional.</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 data-translate="service-sustainability-title">Sustentabilidade</h3>
+          <p data-translate="service-sustainability-desc">Implementação de práticas sustentáveis e certificações ambientais para um negócio responsável.</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 data-translate="service-strategy-title">Estratégia de Mercado</h3>
+          <p data-translate="service-strategy-desc">Desenvolvimento de estratégias comerciais e análise de mercado para crescimento sustentável.</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 data-translate="service-training-title">Capacitação de Equipas</h3>
+          <p data-translate="service-training-desc">Treinamentos especializados e desenvolvimento de competências para suas equipas.</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 data-translate="service-innovation-title">Inovação Tecnológica</h3>
+          <p data-translate="service-innovation-desc">Implementação de novas tecnologias e modernização de equipamentos e processos.</p>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <h3 data-translate="service-certifications-title">Certificações</h3>
+          <p data-translate="service-certifications-desc">Suporte para obtenção de certificações de qualidade e sustentabilidade internacionais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>15+</h3>
+          <p data-translate="stats-experience">Anos de Experiência</p>
+        </div>
+        <div class="stat-item">
+          <h3>200+</h3>
+          <p data-translate="stats-projects">Projetos Realizados</p>
+        </div>
+        <div class="stat-item">
+          <h3>50+</h3>
+          <p data-translate="stats-companies">Empresas Atendidas</p>
+        </div>
+        <div class="stat-item">
+          <h3>95%</h3>
+          <p data-translate="stats-success">Taxa de Sucesso</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-translate="about-title">Sobre a Tech Apoio</h2>
+        <p class="section-subtitle" data-translate="about-subtitle">Pioneiros em consultoria especializada para a indústria da madeira</p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p data-translate="about-text1">A Tech Apoio nasceu da paixão pela indústria da madeira e do mobiliário, combinando décadas de experiência prática com uma visão inovadora para o futuro do setor.</p>
+          
+          <p data-translate="about-text2">Nossa missão é transformar empresas tradicionais em líderes modernos e sustentáveis, oferecendo soluções personalizadas que respeitam a essência artesanal enquanto abraçam as tecnologias mais avançadas.</p>
+          
+          <p data-translate="about-text3">Trabalhamos com empresas de todos os portes, desde pequenas marcenarias familiares até grandes indústrias de móveis, sempre com foco na excelência, sustentabilidade e crescimento responsável.</p>
+        </div>
+        
+        <div class="about-image">
+          <img src="imagens/tech.png" alt="Indústria da Madeira">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-translate="team-title">Nossa Equipa</h2>
+        <p class="section-subtitle" data-translate="team-subtitle">Especialistas apaixonados pela indústria da madeira</p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-member fade-in">
+          <div class="member-photo">
+            <img src="imagens/Tiago.jpg" alt="Tiago Ferreira">
+          </div>
+          <h3 class="member-name">Tiago Ferreira</h3>
+          <p class="member-role" data-translate="team-role1">CEO & Diretor de Formação</p>
+        </div>
+        
+        <div class="team-member fade-in">
+          <div class="member-photo">
+            <img src="imagens/Reina.jpg" alt="Gonçalo Ribeiro">
+          </div>
+          <h3 class="member-name">Gonçalo Ribeiro</h3>
+          <p class="member-role" data-translate="team-role2">Diretor Administrativo & Diretor Financeiro</p>
+        </div>
+        
+        <div class="team-member fade-in">
+          <div class="member-photo">
+            <img src="imagens/Joao.jpg" alt="João Carvalho">
+          </div>
+          <h3 class="member-name">João Carvalho</h3>
+          <p class="member-role" data-translate="team-role3">Diretor Técnico & Diretor de Comunicação Empresarial</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-translate="contact-title">Entre em Contacto</h2>
+        <p class="section-subtitle" data-translate="contact-subtitle">Vamos conversar sobre como podemos impulsionar seu negócio</p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3 data-translate="contact-info-title">Informações de Contacto</h3>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <strong data-translate="contact-address-label">Endereço</strong>
+              <p data-translate="contact-address">R. Centro de Formação Profissional 40 4580-806 Lordelo</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong data-translate="contact-phone-label">Telefone</strong>
+              <p>+351 939 482 716</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>tech_apoio@protonmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-clock"></i>
+            <div>
+              <strong data-translate="contact-hours-label">Horário</strong>
+              <p data-translate="contact-hours">Segunda a Sexta: 8h às 18h</p>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name" data-translate="form-name">Nome Completo</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="company" data-translate="form-company">Empresa</label>
+            <input type="text" id="company" name="company">
+          </div>
+          
+          <div class="form-group">
+            <label for="message" data-translate="form-message">Mensagem</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i>
+            <span data-translate="form-submit">Enviar Mensagem</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Tech Apoio</h3>
+          <p data-translate="footer-description">Transformando a indústria da madeira com soluções inovadoras e sustentáveis.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-translate="footer-services">Serviços</h3>
+          <p><a href="#services" data-translate="footer-service1">Otimização de Processos</a></p>
+          <p><a href="#services" data-translate="footer-service2">Sustentabilidade</a></p>
+          <p><a href="#services" data-translate="footer-service3">Estratégia de Mercado</a></p>
+          <p><a href="#services" data-translate="footer-service4">Capacitação</a></p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-translate="footer-contact">Contacto</h3>
+          <p>📍 <span data-translate="footer-address">R. Centro de Formação Profissional 40</span></p>
+          <p>📞 +351 939 482 716</p>
+          <p>✉️ tech_apoio@protonmail.com</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 data-translate="footer-social">Redes Sociais</h3>
+          <p><a href="#">LinkedIn</a></p>
+          <p><a href="#">Instagram</a></p>
+          <p><a href="#">Facebook</a></p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p data-translate="footer-copyright">&copy; 2025 Tech Apoio. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Translation system
+    const translations = {
+      pt: {
+        // Navigation
+        'nav-home': 'Início',
+        'nav-services': 'Serviços',
+        'nav-about': 'Sobre',
+        'nav-team': 'Equipa',
+        'nav-contact': 'Contacto',
+        
+        // Hero section
+        'hero-badge': 'Especialistas em Madeira & Mobiliário',
+        'hero-subtitle': 'Inovação que move o seu mobiliário',
+        'hero-description': 'Somos especialistas em consultoria para a indústria da madeira e mobiliário, oferecendo soluções estratégicas que combinam tradição artesanal com tecnologia moderna. Nossa missão é impulsionar seu negócio com práticas sustentáveis e processos otimizados.',
+        'btn-services': 'Nossos Serviços',
+        'btn-about': 'Sobre Nós',
+        'feature-sustainable': 'Práticas Sustentáveis',
+        'feature-optimized': 'Processos Otimizados',
+        'feature-growth': 'Crescimento Garantido',
+        
+        // Services section
+        'services-title': 'Nossos Serviços',
+        'services-subtitle': 'Soluções completas para transformar sua empresa na indústria da madeira e mobiliário',
+        'service-optimization-title': 'Otimização de Processos',
+        'service-optimization-desc': 'Análise e melhoria dos processos produtivos, reduzindo custos e aumentando eficiência operacional.',
+        'service-sustainability-title': 'Sustentabilidade',
+        'service-sustainability-desc': 'Implementação de práticas sustentáveis e certificações ambientais para um negócio responsável.',
+        'service-strategy-title': 'Estratégia de Mercado',
+        'service-strategy-desc': 'Desenvolvimento de estratégias comerciais e análise de mercado para crescimento sustentável.',
+        'service-training-title': 'Capacitação de Equipas',
+        'service-training-desc': 'Treinamentos especializados e desenvolvimento de competências para suas equipas.',
+        'service-innovation-title': 'Inovação Tecnológica',
+        'service-innovation-desc': 'Implementação de novas tecnologias e modernização de equipamentos e processos.',
+        'service-certifications-title': 'Certificações',
+        'service-certifications-desc': 'Suporte para obtenção de certificações de qualidade e sustentabilidade internacionais.',
+        
+        // Stats section
+        'stats-experience': 'Anos de Experiência',
+        'stats-projects': 'Projetos Realizados',
+        'stats-companies': 'Empresas Atendidas',
+        'stats-success': 'Taxa de Sucesso',
+        
+        // About section
+        'about-title': 'Sobre a Tech Apoio',
+        'about-subtitle': 'Pioneiros em consultoria especializada para a indústria da madeira',
+        'about-text1': 'A Tech Apoio nasceu da paixão pela indústria da madeira e do mobiliário, combinando décadas de experiência prática com uma visão inovadora para o futuro do setor.',
+        'about-text2': 'Nossa missão é transformar empresas tradicionais em líderes modernos e sustentáveis, oferecendo soluções personalizadas que respeitam a essência artesanal enquanto abraçam as tecnologias mais avançadas.',
+        'about-text3': 'Trabalhamos com empresas de todos os portes, desde pequenas marcenarias familiares até grandes indústrias de móveis, sempre com foco na excelência, sustentabilidade e crescimento responsável.',
+        
+        // Team section
+        'team-title': 'Nossa Equipa',
+        'team-subtitle': 'Especialistas apaixonados pela indústria da madeira',
+        'team-role1': 'CEO & Diretor de Formação',
+        'team-role2': 'Diretor Administrativo & Diretor Financeiro',
+        'team-role3': 'Diretor Técnico & Diretor de Comunicação Empresarial',
+        
+        // Contact section
+        'contact-title': 'Entre em Contacto',
+        'contact-subtitle': 'Vamos conversar sobre como podemos impulsionar seu negócio',
+        'contact-info-title': 'Informações de Contacto',
+        'contact-address-label': 'Endereço',
+        'contact-address': 'R. Centro de Formação Profissional 40 4580-806 Lordelo',
+        'contact-phone-label': 'Telefone',
+        'contact-hours-label': 'Horário',
+        'contact-hours': 'Segunda a Sexta: 8h às 18h',
+        'form-name': 'Nome Completo',
+        'form-company': 'Empresa',
+        'form-message': 'Mensagem',
+        'form-submit': 'Enviar Mensagem',
+        
+        // Footer section
+        'footer-description': 'Transformando a indústria da madeira com soluções inovadoras e sustentáveis.',
+        'footer-services': 'Serviços',
+        'footer-service1': 'Otimização de Processos',
+        'footer-service2': 'Sustentabilidade',
+        'footer-service3': 'Estratégia de Mercado',
+        'footer-service4': 'Capacitação',
+        'footer-contact': 'Contacto',
+        'footer-address': 'R. Centro de Formação Profissional 40',
+        'footer-social': 'Redes Sociais',
+        'footer-copyright': '© 2025 Tech Apoio. Todos os direitos reservados.',
+        
+        // Company name for typing
+        'company-name': 'Tech Apoio'
+      },
+      en: {
+        // Navigation
+        'nav-home': 'Home',
+        'nav-services': 'Services',
+        'nav-about': 'About',
+        'nav-team': 'Team',
+        'nav-contact': 'Contact',
+        
+        // Hero section
+        'hero-badge': 'Wood & Furniture Specialists',
+        'hero-subtitle': 'Innovation that moves your furniture',
+        'hero-description': 'We are specialists in consulting for the wood and furniture industry, offering strategic solutions that combine artisanal tradition with modern technology. Our mission is to boost your business with sustainable practices and optimized processes.',
+        'btn-services': 'Our Services',
+        'btn-about': 'About Us',
+        'feature-sustainable': 'Sustainable Practices',
+        'feature-optimized': 'Optimized Processes',
+        'feature-growth': 'Guaranteed Growth',
+        
+        // Services section
+        'services-title': 'Our Services',
+        'services-subtitle': 'Complete solutions to transform your company in the wood and furniture industry',
+        'service-optimization-title': 'Process Optimization',
+        'service-optimization-desc': 'Analysis and improvement of production processes, reducing costs and increasing operational efficiency.',
+        'service-sustainability-title': 'Sustainability',
+        'service-sustainability-desc': 'Implementation of sustainable practices and environmental certifications for responsible business.',
+        'service-strategy-title': 'Market Strategy',
+        'service-strategy-desc': 'Development of commercial strategies and market analysis for sustainable growth.',
+        'service-training-title': 'Team Training',
+        'service-training-desc': 'Specialized training and skills development for your teams.',
+        'service-innovation-title': 'Technological Innovation',
+        'service-innovation-desc': 'Implementation of new technologies and modernization of equipment and processes.',
+        'service-certifications-title': 'Certifications',
+        'service-certifications-desc': 'Support for obtaining international quality and sustainability certifications.',
+        
+        // Stats section
+        'stats-experience': 'Years of Experience',
+        'stats-projects': 'Completed Projects',
+        'stats-companies': 'Companies Served',
+        'stats-success': 'Success Rate',
+        
+        // About section
+        'about-title': 'About Tech Apoio',
+        'about-subtitle': 'Pioneers in specialized consulting for the wood industry',
+        'about-text1': 'Tech Apoio was born from a passion for the wood and furniture industry, combining decades of practical experience with an innovative vision for the future of the sector.',
+        'about-text2': 'Our mission is to transform traditional companies into modern and sustainable leaders, offering personalized solutions that respect the artisanal essence while embracing the most advanced technologies.',
+        'about-text3': 'We work with companies of all sizes, from small family carpentry shops to large furniture industries, always focusing on excellence, sustainability and responsible growth.',
+        
+        // Team section
+        'team-title': 'Our Team',
+        'team-subtitle': 'Specialists passionate about the wood industry',
+        'team-role1': 'CEO & Training Director',
+        'team-role2': 'Administrative Director & Financial Director',
+        'team-role3': 'Technical Director & Corporate Communication Director',
+        
+        // Contact section
+        'contact-title': 'Get in Touch',
+        'contact-subtitle': 'Let\'s talk about how we can boost your business',
+        'contact-info-title': 'Contact Information',
+        'contact-address-label': 'Address',
+        'contact-address': 'R. Centro de Formação Profissional 40 4580-806 Lordelo',
+        'contact-phone-label': 'Phone',
+        'contact-hours-label': 'Hours',
+        'contact-hours': 'Monday to Friday: 8am to 6pm',
+        'form-name': 'Full Name',
+        'form-company': 'Company',
+        'form-message': 'Message',
+        'form-submit': 'Send Message',
+        
+        // Footer section
+        'footer-description': 'Transforming the wood industry with innovative and sustainable solutions.',
+        'footer-services': 'Services',
+        'footer-service1': 'Process Optimization',
+        'footer-service2': 'Sustainability',
+        'footer-service3': 'Market Strategy',
+        'footer-service4': 'Training',
+        'footer-contact': 'Contact',
+        'footer-address': 'R. Centro de Formação Profissional 40',
+        'footer-social': 'Social Media',
+        'footer-copyright': '© 2025 Tech Apoio. All rights reserved.',
+        
+        // Company name for typing
+        'company-name': 'Tech Apoio'
+      }
+    };
+
+    let currentLanguage = 'pt';
+
+    function translatePage(language) {
+      const elements = document.querySelectorAll('[data-translate]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[language][key]) {
+          element.textContent = translations[language][key];
+        }
+      });
+
+      // Update typing animation text
+      const typingElement = document.getElementById('typing-title');
+      if (typingElement) {
+        typingElement.classList.remove('finished');
+        typeWriter(typingElement, translations[language]['company-name'], 70);
+      }
+
+      // Update language indicator
+      document.getElementById('current-lang').textContent = language.toUpperCase();
+      
+      // Store language preference
+      localStorage.setItem('preferred-language', language);
+      currentLanguage = language;
+    }
+
+    // Language toggle functionality
+    document.getElementById('language-toggle').addEventListener('click', () => {
+      const newLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+      translatePage(newLanguage);
+    });
+
+    // Theme toggle functionality
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      
+      // Update icon
+      const themeIcon = document.getElementById('theme-icon');
+      if (newTheme === 'dark') {
+        themeIcon.className = 'fas fa-sun';
+      } else {
+        themeIcon.className = 'fas fa-moon';
+      }
+      
+      // Store theme preference
+      localStorage.setItem('preferred-theme', newTheme);
+    }
+
+    // Theme toggle event listener
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+    // Load saved theme preference
+    function loadTheme() {
+      const savedTheme = localStorage.getItem('preferred-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      
+      const themeIcon = document.getElementById('theme-icon');
+      if (savedTheme === 'dark') {
+        themeIcon.className = 'fas fa-sun';
+      } else {
+        themeIcon.className = 'fas fa-moon';
+      }
+    }
+
+    // Typing animation for title (enhanced)
+    function typeWriter(element, text, speed = 80) {
+      let i = 0;
+      element.innerHTML = '';
+      
+      function type() {
+        if (i < text.length) {
+          const char = text.charAt(i);
+          const span = document.createElement('span');
+          span.textContent = char;
+          span.className = 'typing-char';
+          span.style.animationDelay = '0s';
+          element.appendChild(span);
+          i++;
+          
+          // Variable speed for more natural typing
+          const randomDelay = speed + Math.random() * 40 - 20;
+          setTimeout(type, Math.max(30, randomDelay));
+        } else {
+          // Add a small delay before removing cursor
+          setTimeout(() => {
+            element.classList.add('finished');
+          }, 800);
+        }
+      }
+      
+      type();
+    }
+
+    // Load saved language preference and initialize typing animation
+    window.addEventListener('load', () => {
+      // Load theme first
+      loadTheme();
+      
+      const savedLanguage = localStorage.getItem('preferred-language') || 'pt';
+      
+      // Set current language
+      currentLanguage = savedLanguage;
+      
+      // Update language indicator
+      document.getElementById('current-lang').textContent = savedLanguage.toUpperCase();
+      
+      // If language is not Portuguese, translate the page first
+      if (savedLanguage !== 'pt') {
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+          const key = element.getAttribute('data-translate');
+          if (translations[savedLanguage][key]) {
+            element.textContent = translations[savedLanguage][key];
+          }
+        });
+      }
+      
+      // Start typing animation with correct language
+      const titleElement = document.getElementById('typing-title');
+      setTimeout(() => {
+        const companyName = translations[savedLanguage]['company-name'];
+        typeWriter(titleElement, companyName, 70);
+      }, 800); // Start after 0.8 seconds
+    });
+
+    // Navigation scroll effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    // Active navigation link
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Fade in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Form submission
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const message = currentLanguage === 'pt' 
+        ? 'Mensagem enviada com sucesso! Entraremos em contacto em breve.'
+        : 'Message sent successfully! We will contact you soon.';
+      alert(message);
+    });
+
+    // Counter animation for stats
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stat-item h3');
+      counters.forEach(counter => {
+        const target = parseInt(counter.textContent);
+        const increment = target / 100;
+        let current = 0;
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target + (counter.textContent.includes('+') ? '+' : '') + (counter.textContent.includes('%') ? '%' : '');
+            clearInterval(timer);
+          } else {
+            counter.textContent = Math.floor(current) + (counter.textContent.includes('+') ? '+' : '') + (counter.textContent.includes('%') ? '%' : '');
+          }
+        }, 20);
+      });
+    }
+
+    // Trigger counter animation when stats section is visible
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    });
+
+    statsObserver.observe(document.querySelector('.stats'));
+  </script>
+</body>
+</html>
