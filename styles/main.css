@@ -1,0 +1,359 @@
+/* Tech Apoio - Main Stylesheet */
+/* McDonald's-inspired design system with original colors */
+
+@import url('https://fonts.googleapis.com/css2?family=Speedee:wght@400;700&family=Roboto:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Original Colors */
+  --primary: #007AFF;
+  --secondary: #5856D6;
+  --accent: #FF3B30;
+  --success: #34C759;
+  --warning: #FF9500;
+  
+  /* McDonald's Style System Colors */
+  --system-gray: #8E8E93;
+  --system-gray-2: #AEAEB2;
+  --system-gray-3: #C7C7CC;
+  --system-gray-4: #D1D1D6;
+  --system-gray-5: #E5E5EA;
+  --system-gray-6: #F2F2F7;
+  
+  /* Background Colors */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F9F9F9;
+  --bg-tertiary: #FFFFFF;
+  --bg-dark: #1A1A1A;
+  --bg-dark-secondary: #2A2A2A;
+  --bg-dark-tertiary: #3A3A3A;
+  
+  /* Text Colors */
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --text-dark-primary: #FFFFFF;
+  --text-dark-secondary: #E0E0E0;
+  --text-dark-tertiary: #B0B0B0;
+  
+  /* McDonald's Style Transitions */
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-elastic: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Dynamic Shadows */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --shadow-floating: 0 12px 40px rgba(0, 0, 0, 0.25);
+  
+  /* Border Radius - McDonald's Style */
+  --radius-small: 8px;
+  --radius-medium: 16px;
+  --radius-large: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: var(--transition-smooth);
+}
+
+/* McDonald's Style Typography */
+.mc-heading {
+  font-family: 'Speedee', 'Roboto', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.mc-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+/* Glassmorphism Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* McDonald's Style Cards */
+.mc-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-medium);
+  padding: 32px;
+  transition: var(--transition-bounce);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.mc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transform: scaleX(0);
+  transition: var(--transition-elastic);
+}
+
+.mc-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-floating);
+  border-color: var(--primary);
+}
+
+.mc-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Energetic Button Styles */
+.mc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-family: 'Speedee', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  min-width: 200px;
+}
+
+.mc-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+
+.mc-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.mc-button.primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: var(--shadow-medium);
+}
+
+.mc-button.secondary {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 3px solid var(--primary);
+  box-shadow: var(--shadow-light);
+}
+
+.mc-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-heavy);
+}
+
+.mc-button:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Pulsing Animation */
+@keyframes mc-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.mc-pulse {
+  animation: mc-pulse 2s infinite;
+}
+
+/* Bounce In Animation */
+@keyframes mc-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(100px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  70% {
+    transform: scale(0.9) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.mc-bounce-in {
+  animation: mc-bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Slide In Animations */
+@keyframes mc-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mc-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mc-slide-in-left {
+  animation: mc-slide-in-left 0.6s ease-out;
+}
+
+.mc-slide-in-right {
+  animation: mc-slide-in-right 0.6s ease-out;
+}
+
+/* Energetic Hover Effects */
+.mc-hover-grow {
+  transition: var(--transition-bounce);
+}
+
+.mc-hover-grow:hover {
+  transform: scale(1.1);
+}
+
+.mc-hover-float {
+  transition: var(--transition-elastic);
+}
+
+.mc-hover-float:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-floating);
+}
+
+/* Ripple Effect */
+@keyframes mc-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.mc-ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.mc-ripple-effect::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: mc-ripple 0.6s linear;
+  pointer-events: none;
+}
+
+/* Loading Spinner */
+@keyframes mc-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.mc-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--system-gray-5);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  animation: mc-spin 1s linear infinite;
+}
+
+/* Utility Classes */
+.mc-text-center { text-align: center; }
+.mc-text-left { text-align: left; }
+.mc-text-right { text-align: right; }
+
+.mc-bold { font-weight: 700; }
+.mc-medium { font-weight: 500; }
+.mc-light { font-weight: 300; }
+
+.mc-uppercase { text-transform: uppercase; }
+.mc-lowercase { text-transform: lowercase; }
+.mc-capitalize { text-transform: capitalize; }
+
+.mc-rounded { border-radius: var(--radius-medium); }
+.mc-rounded-lg { border-radius: var(--radius-large); }
+.mc-rounded-xl { border-radius: var(--radius-xl); }
+.mc-rounded-full { border-radius: 50%; }
+
+.mc-shadow-sm { box-shadow: var(--shadow-light); }
+.mc-shadow-md { box-shadow: var(--shadow-medium); }
+.mc-shadow-lg { box-shadow: var(--shadow-heavy); }
+.mc-shadow-xl { box-shadow: var(--shadow-floating); }
+
+/* Responsive Utilities */
+.mc-hide-mobile { display: block; }
+.mc-show-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .mc-hide-mobile { display: none; }
+  .mc-show-mobile { display: block; }
+}

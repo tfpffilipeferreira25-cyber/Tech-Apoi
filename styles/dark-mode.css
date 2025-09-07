@@ -1,0 +1,103 @@
+/* Dark Mode Styles */
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark-primary);
+}
+
+body.dark .section {
+  background: var(--bg-dark);
+}
+
+body.dark .section::before {
+  background: linear-gradient(135deg, rgba(0, 122, 255, 0.08) 0%, rgba(88, 86, 214, 0.08) 100%);
+}
+
+body.dark .nav-fixed.scrolled {
+  background: rgba(26, 26, 26, 0.95);
+  border-bottom-color: var(--bg-dark-tertiary);
+}
+
+body.dark .nav-links {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark .nav-link {
+  color: var(--text-dark-primary);
+}
+
+body.dark .nav-link:hover {
+  background: rgba(0, 122, 255, 0.25);
+  color: var(--primary);
+}
+
+body.dark .nav-link.active {
+  background: var(--primary);
+  color: white;
+}
+
+body.dark .control-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-dark-primary);
+}
+
+body.dark .control-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+body.dark .mc-button.secondary {
+  background: var(--bg-dark-tertiary);
+  color: var(--text-dark-primary);
+  border-color: var(--primary);
+}
+
+body.dark .mc-button.secondary:hover {
+  background: var(--bg-dark-secondary);
+}
+
+body.dark .section-subtitle {
+  color: var(--text-dark-secondary);
+}
+
+body.dark .about-content {
+  background: rgba(42, 42, 42, 0.95);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark .about-text {
+  color: var(--text-dark-primary);
+}
+
+body.dark .team-member {
+  background: rgba(42, 42, 42, 0.9);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark .team-member:hover {
+  border-color: var(--primary);
+}
+
+body.dark .member-name {
+  color: var(--text-dark-primary);
+}
+
+body.dark .member-role {
+  color: var(--text-dark-secondary);
+}
+
+body.dark .scroll-indicator {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark .mc-card {
+  background: var(--bg-dark-secondary);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .mc-card:hover {
+  border-color: var(--primary);
+}
