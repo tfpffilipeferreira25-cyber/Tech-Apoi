@@ -1,0 +1,281 @@
+{
+  "site": {
+    "name": "Tech Apoio",
+    "tagline": {
+      "pt": "Inovação Digital para o Futuro",
+      "en": "Digital Innovation for the Future"
+    },
+    "description": {
+      "pt": "Empresa de consultoria dedicada ao setor da madeira e do mobiliário",
+      "en": "Consulting company dedicated to the wood and furniture sector"
+    },
+    "version": "2.0.0",
+    "author": "Tech Apoio Team",
+    "lastUpdated": "2025-07-17"
+  },
+  "navigation": {
+    "links": [
+      {
+        "id": "inicio",
+        "label": {
+          "pt": "Início",
+          "en": "Home"
+        },
+        "href": "#inicio"
+      },
+      {
+        "id": "servicos",
+        "label": {
+          "pt": "Serviços",
+          "en": "Services"
+        },
+        "href": "#servicos"
+      },
+      {
+        "id": "sobre",
+        "label": {
+          "pt": "Sobre",
+          "en": "About"
+        },
+        "href": "#sobre"
+      },
+      {
+        "id": "equipe",
+        "label": {
+          "pt": "Equipe",
+          "en": "Team"
+        },
+        "href": "#equipe"
+      },
+      {
+        "id": "contato",
+        "label": {
+          "pt": "Contato",
+          "en": "Contact"
+        },
+        "href": "#contato"
+      }
+    ]
+  },
+  "sections": {
+    "home": {
+      "title": {
+        "pt": "Tech Apoio",
+        "en": "Tech Apoio"
+      },
+      "subtitle": {
+        "pt": "Inovação Digital para o Futuro",
+        "en": "Digital Innovation for the Future"
+      },
+      "buttons": [
+        {
+          "type": "primary",
+          "label": {
+            "pt": "Nossos Serviços",
+            "en": "Our Services"
+          },
+          "action": "scrollToSection",
+          "target": "servicos"
+        },
+        {
+          "type": "secondary",
+          "label": {
+            "pt": "Saiba Mais",
+            "en": "Learn More"
+          },
+          "action": "scrollToSection",
+          "target": "sobre"
+        }
+      ]
+    },
+    "services": {
+      "title": {
+        "pt": "Nossos Serviços",
+        "en": "Our Services"
+      },
+      "subtitle": {
+        "pt": "Soluções digitais que transformam seu negócio",
+        "en": "Digital solutions that transform your business"
+      },
+      "buttons": [
+        {
+          "type": "primary",
+          "label": {
+            "pt": "Solicitar Orçamento",
+            "en": "Request Quote"
+          },
+          "action": "contact"
+        },
+        {
+          "type": "secondary",
+          "label": {
+            "pt": "Ver Portfólio",
+            "en": "View Portfolio"
+          },
+          "action": "portfolio"
+        }
+      ]
+    },
+    "about": {
+      "title": {
+        "pt": "Sobre Nós",
+        "en": "About Us"
+      },
+      "subtitle": {
+        "pt": "Nossa história e missão",
+        "en": "Our story and mission"
+      },
+      "content": {
+        "pt": "Somos uma empresa de consultoria dedicada ao setor da madeira e do mobiliário, com foco em comunicação, planeamento, organização e formação profissional. Surgimos da necessidade de apoiar empresas que enfrentam desafios na gestão e qualificação das suas equipas. Movidos pela paixão por este setor tradicional e essencial para a economia, trabalhamos para impulsionar a sua modernização e crescimento sustentável.",
+        "en": "We are a consulting company dedicated to the wood and furniture sector, focusing on communication, planning, organization and professional training. We emerged from the need to support companies facing challenges in team management and qualification. Driven by passion for this traditional and essential sector of the economy, we work to promote its modernization and sustainable growth."
+      }
+    },
+    "team": {
+      "title": {
+        "pt": "Nossa Equipe",
+        "en": "Our Team"
+      },
+      "subtitle": {
+        "pt": "Profissionais dedicados",
+        "en": "Dedicated professionals"
+      },
+      "members": [
+        {
+          "id": "joao",
+          "name": "João Carvalho",
+          "role": {
+            "pt": "Consultor Sénior",
+            "en": "Senior Consultant"
+          },
+          "image": "Joao.jpg",
+          "bio": {
+            "pt": "Especialista em gestão empresarial com mais de 15 anos de experiência no setor.",
+            "en": "Business management specialist with over 15 years of experience in the sector."
+          }
+        },
+        {
+          "id": "goncalo",
+          "name": "Gonçalo Ribeiro",
+          "role": {
+            "pt": "Gestora de Projetos",
+            "en": "Project Manager"
+          },
+          "image": "Reina.jpg",
+          "bio": {
+            "pt": "Responsável pela coordenação e execução de projetos estratégicos.",
+            "en": "Responsible for coordination and execution of strategic projects."
+          }
+        },
+        {
+          "id": "tiago",
+          "name": "Tiago Ferreira",
+          "role": {
+            "pt": "Consultor Técnico",
+            "en": "Technical Consultant"
+          },
+          "image": "Tiago.jpg",
+          "bio": {
+            "pt": "Especialista em tecnologia e inovação para o setor madeireiro.",
+            "en": "Technology and innovation specialist for the wood sector."
+          }
+        }
+      ]
+    },
+    "contact": {
+      "title": {
+        "pt": "Contacte-nos",
+        "en": "Contact Us"
+      },
+      "subtitle": {
+        "pt": "Estamos aqui para ajudar",
+        "en": "We're here to help"
+      },
+      "buttons": [
+        {
+          "type": "primary",
+          "label": {
+            "pt": "Enviar Email",
+            "en": "Send Email"
+          },
+          "action": "mailto",
+          "target": "info@techapoio.com"
+        },
+        {
+          "type": "secondary",
+          "label": {
+            "pt": "Ligar Agora",
+            "en": "Call Now"
+          },
+          "action": "tel",
+          "target": "+351 123 456 789"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "defaultLanguage": "pt",
+    "supportedLanguages": ["pt", "en"],
+    "theme": {
+      "default": "light",
+      "allowToggle": true
+    },
+    "animations": {
+      "enabled": true,
+      "respectReducedMotion": true,
+      "duration": {
+        "fast": 150,
+        "normal": 300,
+        "slow": 500
+      }
+    },
+    "performance": {
+      "lazyLoadImages": true,
+      "preloadCriticalAssets": true,
+      "enableServiceWorker": false
+    }
+  },
+  "assets": {
+    "images": {
+      "logo": "tech.png",
+      "team": {
+        "joao": "Joao.jpg",
+        "goncalo": "Reina.jpg",
+        "tiago": "Tiago.jpg"
+      }
+    },
+    "fonts": [
+      "https://fonts.googleapis.com/css2?family=Speedee:wght@400;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap"
+    ],
+    "scripts": [
+      "js/utils.js",
+      "js/animations.js",
+      "js/main.js"
+    ],
+    "styles": [
+      "styles/main.css",
+      "styles/layout.css",
+      "styles/dark-mode.css",
+      "styles/responsive.css"
+    ]
+  },
+  "meta": {
+    "keywords": {
+      "pt": "consultoria, madeira, mobiliário, formação, gestão, organização",
+      "en": "consulting, wood, furniture, training, management, organization"
+    },
+    "description": {
+      "pt": "Tech Apoio - Empresa de consultoria especializada no setor da madeira e do mobiliário. Oferecemos soluções em comunicação, planeamento, organização e formação profissional.",
+      "en": "Tech Apoio - Consulting company specialized in the wood and furniture sector. We offer solutions in communication, planning, organization and professional training."
+    },
+    "og": {
+      "title": "Tech Apoio - Inovação Digital",
+      "description": {
+        "pt": "Consultoria especializada no setor da madeira e do mobiliário",
+        "en": "Consulting specialized in the wood and furniture sector"
+      },
+      "image": "tech.png",
+      "url": "https://techapoio.com"
+    }
+  }
+}
