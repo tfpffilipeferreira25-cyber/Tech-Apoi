@@ -1,0 +1,48 @@
+{
+  "name": "Tech Apoio Website",
+  "version": "2.0.0",
+  "description": "Website for Tech Apoio - Consulting company for wood and furniture sector",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "echo 'Building static site...'",
+    "lint": "echo 'Linting files...'",
+    "test": "echo 'Running tests...'"
+  },
+  "keywords": [
+    "tech apoio",
+    "consultoria",
+    "madeira",
+    "mobiliário",
+    "consulting",
+    "wood",
+    "furniture",
+    "mcdonalds-style",
+    "animations"
+  ],
+  "author": "Tech Apoio Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techapoio/website.git"
+  },
+  "dependencies": {
+    "fontawesome": "^6.4.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.0",
+    "eslint": "^8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "config": {
+    "theme": "mcdonalds-inspired",
+    "animations": "enabled",
+    "languages": ["pt", "en"],
+    "responsive": true
+  }
+}
